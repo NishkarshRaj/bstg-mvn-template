@@ -7,11 +7,11 @@
 		<version>2.7.18</version>
 		<relativePath />
 	</parent>
-	<groupId>pkg</groupId>
-	<artifactId>bstg-mvn-template</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
-	<name>bstg-mvn-template</name>
-	<description>Demo Spring Boot Project</description>
+	<groupId>${{values.java_package_name}}</groupId>
+	<artifactId>${{values.component_id}}</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>${{values.component_id}}</name>
+	<description>${{values.description}}</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -46,7 +46,7 @@
    		<repository>
      		<id>github</id>
      		<name>GitHub OWNER Apache Maven Packages</name>
-     		<url>https://maven.pkg.github.com/NishkarshRaj/bstg-mvn-template</url>
+     		<url>https://maven.java_package_name.github.com/${{values.destination.owner + "/" + values.destination.repo}}</url>
    		</repository>
 	</distributionManagement>
 </project>
