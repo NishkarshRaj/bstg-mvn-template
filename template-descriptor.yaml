@@ -90,6 +90,9 @@ spec:
         description: This is ${{ parameters.component_id }}
         repoUrl: ${{ parameters.repoUrl }}
         repoVisibility: public
+        gitCommitMessage: "Scaffolder Magic"
+        gitAuthorName: "NishkarshRaj"
+        gitAuthorEmail: "nishkarshraj000@gmail.com"
 
     - id: register
       name: Register
