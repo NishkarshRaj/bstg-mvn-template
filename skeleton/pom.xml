@@ -46,7 +46,7 @@
    		<repository>
      		<id>github</id>
      		<name>GitHub OWNER Apache Maven Packages</name>
-     		<url>https://maven.java_package_name.github.com/${{values.destination.owner + "/" + values.destination.repo}}</url>
+     		<url>https://maven.pkg.github.com/${{values.destination.owner + "/" + values.destination.repo}}</url>
    		</repository>
 	</distributionManagement>
 </project>
