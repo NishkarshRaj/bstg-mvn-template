@@ -1,9 +1,15 @@
-## Developer Playbook
+# Hello World App
 
-```sh
-mvn clean package
-# Build Image with Dockerfile
-docker build -t <tag> .
-# Build Image with Spring Boot
-mvn spring-boot:build-image
-```
+Built with:
+
+- [x] `Java`
+- [x] Maven
+- [x] SpringBoot
+- [x] Docker
+- [x] GitHub Actions
+- [x] GitHub Packages
+- [x] Step-Security
+- [x] Pre-Commits
+- [x] Dependabot
+- [x] GitHub Advanced Security
+- [x] Backstage
