@@ -61,7 +61,7 @@ spec:
           description: Unique name of the component
           enum:
             - DockerHub
-            - GitHub Container Registry
+            - ghcr.io
             - JFrog
             - AWS ECR
             - Google Container Registry
