@@ -9,6 +9,12 @@ metadata:
     - java
     - recommended
   links:
+    - title: Backstage
+      url: https://backstage.io
+      icon: backstage
+    - title: Author
+      url: https://github.com/NishkarshRaj
+      icon: github
 
 spec:
   owner: nishkarshraj000@gmail.com
