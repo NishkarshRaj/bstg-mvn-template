@@ -2,12 +2,6 @@ name: DevSecOps Pipeline Workflow
 
 on: push
 
-env:
-  # Use docker.io for Docker Hub if empty
-  REGISTRY: ghcr.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
-
 permissions:
   contents: read
 
@@ -51,11 +45,11 @@ jobs:
           distribution: "temurin"
           cache: maven
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-          settings-path: ${{ github.workspace }} # location for the settings.xml file
+          settings-path: {% raw %} ${{ github.workspace }} {% endraw %} # location for the settings.xml file
       - name: Publish to GitHub Packages Apache Maven
         run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: {% raw %} ${{ github.token }} {% endraw %}
 
   build-and-push-image:
     name: BnP GHCR
@@ -75,8 +69,8 @@ jobs:
         uses: docker/login-action@3d58c274f17dffee475a5520cbe67f0a882c4dbb
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: {% raw %} ${{ github.actor }} {% endraw %}
+          password: {% raw %} ${{ secrets.GITHUB_TOKEN }} {% endraw %}
       - name: Set up JDK 17 - Cache Enabled
         uses: actions/setup-java@387ac29b308b003ca37ba93a6cab5eb57c8f5f93 # v4.0.0
         with:
@@ -84,7 +78,7 @@ jobs:
           distribution: "temurin"
           cache: maven
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-          settings-path: ${{ github.workspace }} # location for the settings.xml file
+          settings-path: {% raw %} ${{ github.workspace }} {% endraw %} # location for the settings.xml file
       - name: Generate Executables for Docker Context
         run: mvn clean package
       - name: BnP Docker Image
