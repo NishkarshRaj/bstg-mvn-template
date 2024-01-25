@@ -89,5 +89,5 @@ jobs:
         run: mvn clean package
       - name: BnP Docker Image
         run: |
-          docker build -t ghcr.io/nishkarshraj/bstg-mvn-template .
-          docker push ghcr.io/nishkarshraj/bstg-mvn-template
+          docker build -t ${{values.containerRegistry}}/${{values.imageProject}}/${{values.imageName}}  .
+          docker push ${{values.containerRegistry}}/${{values.imageProject}}/${{values.imageName}}
