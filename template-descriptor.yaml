@@ -90,8 +90,8 @@ spec:
               - dev.azure.com
               - bitbucket.org
               - sample.gitonserver.net
-            requestUserCredentials:
-              secretsKey: USER_OAUTH_TOKEN
+            # requestUserCredentials:
+            #   secretsKey: USER_OAUTH_TOKEN
 
   steps:
     - id: template
@@ -124,7 +124,7 @@ spec:
         gitCommitMessage: "Scaffolder Magic"
         gitAuthorName: "NishkarshRaj"
         gitAuthorEmail: "nishkarshraj000@gmail.com"
-        token: ${{ secrets.USER_OAUTH_TOKEN }}
+        # token: ${{ secrets.USER_OAUTH_TOKEN }}
 
     - id: register
       name: Register
